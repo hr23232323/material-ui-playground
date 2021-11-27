@@ -8,13 +8,11 @@ import CssBaseline from "@mui/material/CssBaseline";
 
 const theme = createTheme();
 
-function App() {
+export const App: React.FC<{}> = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <PlaygroundContents />
     </ThemeProvider>
   );
-}
-
-export default App;
+};

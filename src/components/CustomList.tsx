@@ -8,7 +8,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
-export function CustomList() {
+export const CustomList: React.FC<{}> = () => {
   return (
     <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
       <nav aria-label="main mailbox folders">
@@ -27,4 +27,4 @@ export function CustomList() {
       </nav>
     </Box>
   );
-}
+};
