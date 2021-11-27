@@ -8,21 +8,24 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 
-export const CustomList: React.FC<{}> = () => {
+type CustomListProps = {
+  listItems: string[];
+};
+
+export const CustomList: React.FC<CustomListProps> = ({ listItems }) => {
   return (
     <Box sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}>
       <nav aria-label="main mailbox folders">
         <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Inbox" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Drafts" />
-            </ListItemButton>
-          </ListItem>
+          {listItems.map((item, i) => {
+            return (
+              <ListItem disablePadding key={i}>
+                <ListItemButton>
+                  <ListItemText primary={item} />
+                </ListItemButton>
+              </ListItem>
+            );
+          })}
         </List>
       </nav>
     </Box>
