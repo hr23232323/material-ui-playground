@@ -1,4 +1,5 @@
 import React from "react";
+import { customListItem } from "../types";
 
 import { Box } from "@mui/system";
 import List from "@mui/material/List";
@@ -7,7 +8,7 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
 
 type CustomListProps = {
-  listItems: string[];
+  listItems: customListItem[];
 };
 
 export const CustomList: React.FC<CustomListProps> = ({ listItems }) => {
@@ -18,8 +19,8 @@ export const CustomList: React.FC<CustomListProps> = ({ listItems }) => {
           {listItems.map((item, i) => {
             return (
               <ListItem disablePadding key={i}>
-                <ListItemButton>
-                  <ListItemText primary={item} />
+                <ListItemButton component="a" href={item.itemLink}>
+                  <ListItemText primary={item.itemName} />
                 </ListItemButton>
               </ListItem>
             );
