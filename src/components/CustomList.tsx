@@ -20,7 +20,7 @@ export const CustomList: React.FC<CustomListProps> = ({ listItems }) => {
             return (
               <ListItem disablePadding key={i}>
                 <ListItemButton component="a" href={item.itemLink}>
-                  <ListItemText primary={item.itemName} />
+                  <ListItemText primary={item.itemName} sx={{color: "primary.main"}} />
                 </ListItemButton>
               </ListItem>
             );
